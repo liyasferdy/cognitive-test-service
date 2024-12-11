@@ -1,0 +1,15 @@
+# dont .env
+.env
+
+
+# Abaikan folder backup
+backup/
+
+# Abaikan file log, cache, dan bytecode
+*.log
+__pycache__/
+*.pyc
+*.pyo
+
+# Abaikan Virtual Environment
+venv/
