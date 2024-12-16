@@ -10,13 +10,14 @@ passlib = "*"
 jwt = "*"
 pydantic = {extras = ["email"], version = "*"}
 python-multipart = "*"
-pyjwt = "*"
 python-jose = "*"
 asyncpg = "*"
 databases = "*"
 sqlalchemy = "*"
 sqlalchemy-orm = "*"
 psycopg2-binary = "*"
+python-dotenv = "*"
+pyjwt = "==2.1.0"
 
 [dev-packages]
 
