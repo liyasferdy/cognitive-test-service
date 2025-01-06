@@ -84,8 +84,15 @@ class TestDB(Base):
     answers_mv = Column(JSON, nullable=True)  # Ensure JSON type
     answers_ms = Column(JSON, nullable=True)  # Ensure JSON type
     answers_mw = Column(JSON, nullable=True)  # Ensure JSON type
+    answers_rq = Column(JSON, nullable=True)  # Ensure JSON type
+    answers_gfi = Column(JSON, nullable=True)  # Ensure JSON type
+    answers_vz = Column(JSON, nullable=True)  # Ensure JSON type
+    answers_vls = Column(JSON, nullable=True)  # Ensure JSON type
+    answers_vlsa = Column(JSON, nullable=True)  # Ensure JSON type
+    answers_rg = Column(JSON, nullable=True)  # Ensure JSON type
+    answers_a3 = Column(JSON, nullable=True)  # Ensure JSON type
+    answers_rc = Column(JSON, nullable=True)  # Ensure JSON type
     created_at = Column(TIMESTAMP, server_default=func.now())  # Timestamp
-
 
 
 # Fungsi untuk mendapatkan sesi database
@@ -145,7 +152,7 @@ def get_user_from_token(token: str, db: Session):
         if db_user is None or db_user.token != token:
             raise HTTPException(status_code=401, detail="Invalid or expired token")
         return db_user
-    except PyJWTError:
+    except JWTError:
         raise HTTPException(status_code=401, detail="Invalid token")
     
 
